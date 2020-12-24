@@ -10,21 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
-import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Сервисный слой
+ */
 @Service
 @Transactional
 @AllArgsConstructor
@@ -36,55 +35,51 @@ public class OrangeService {
     @Autowired
     private final RestTemplate restTemplate;
 
-    public ClidFullAddress getAddressByClid(String clid)
-            throws JsonProcessingException, RestClientException {
-
-        ClidAddrId clidAddrId = orangeRepository.findByClid(clid).orElse(null);
-        if(clidAddrId == null){
-            return new ClidFullAddress();
-        } else {
-            String fullAddress = getAddressById(clidAddrId.getAddrId());
-            return new ClidFullAddress(clid, fullAddress);
-        }
+    /**
+     * Возвращает список пар телефон-адрес по заданному списку телефонов
+     * @param clidList
+     * @return список пар телефон-адрес
+     * @throws RestClientException
+     */
+    public List<ClidFullAddress> getAddressesByList(List<String> clidList) throws RestClientException {
+        List<ClidAddrId> clidAddrIds = orangeRepository.findAllByClidList(clidList);
+        return getFullAddress(clidAddrIds);
     }
 
     /**
-     * Получение списка адресов по списку номеров телефонов
-     * @param clidList список clid
-     * @return список адресов
-     * @throws JsonProcessingException
+     * Возвращает все пары телефон-адрес
+     * @param pageable настройки пагинации. По умолчанию страница = 0, размер страницы = 100
+     * @return страницу с парами телефон-адрес
+     * @throws RestClientException
      */
-    public List<ClidFullAddress> getAddressesByList(List<String> clidList)
-            throws JsonProcessingException, RestClientException {
-        List<ClidAddrId> clidAddrIds = orangeRepository.findAllByClidList(clidList);
-        return getFullAddrForList(clidAddrIds);
-    }
-
-    public Page<ClidFullAddress> getAll(Pageable pageable)
-            throws JsonProcessingException, RestClientException {
+    public Page<ClidFullAddress> getAll(Pageable pageable) throws RestClientException {
         Page<ClidAddrId> clidAddrIds = orangeRepository.findAll(pageable);
-        List<ClidFullAddress> clidFullAddresses = getFullAddrForList(clidAddrIds.toList());
+        List<ClidFullAddress> clidFullAddresses = getFullAddress(clidAddrIds.toList());
         return new PageImpl<>(clidFullAddresses, pageable, clidFullAddresses.size());
     }
 
-    public List<ClidFullAddress> getFullAddrForList(List<ClidAddrId> addrIds)
-            throws JsonProcessingException, RestClientException {
+    /**
+     * Возвращает список пар телефон-адрес для указанного списка пар телефон - идентификатор адреса
+     * @param addrIds список пар телефон - идентификатор адреса
+     * @return список пар телефон-адрес
+     * @throws RestClientException
+     */
+    public List<ClidFullAddress> getFullAddress(List<ClidAddrId> addrIds) throws RestClientException {
         List<ClidFullAddress> clidFullAddresses = new ArrayList<>();
-        for (ClidAddrId ca: addrIds) {
+        addrIds.forEach(ca -> {
             String fullAddress = getAddressById(ca.getAddrId());
-            ClidFullAddress clidFullAddress = new ClidFullAddress(ca.getClid(), fullAddress);
-            clidFullAddresses.add(clidFullAddress);
-        }
+            clidFullAddresses.add(new ClidFullAddress(ca.getClid(), fullAddress));
+        });
         return clidFullAddresses;
     }
 
     /**
      * Получение строки адреса по id из внешнего Rest сервиса
-     * @param addrId - идентификатор строки с адресом
-     * @return строку с адресом
-     * @throws JsonProcessingException
+     * @param addrId идентификатор строки с адресом
+     * @return сторока с адресом. Если адрес не найден, возвращает null
+     * @throws RestClientException
      */
-    public String getAddressById(BigDecimal addrId) throws JsonProcessingException, RestClientException {
+    public String getAddressById(BigDecimal addrId) throws RestClientException {
         String url = "http://localhost:9090/addr/getaddrdata/"+addrId;
         try {
             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
@@ -92,6 +87,9 @@ public class OrangeService {
             Address address = objectMapper.readValue(response.getBody(), Address.class);
             return address.getFullAddress();
         } catch (HttpClientErrorException.NotFound exception) {
+            return null;
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
             return null;
         }
     }

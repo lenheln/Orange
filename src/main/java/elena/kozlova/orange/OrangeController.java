@@ -39,42 +39,19 @@ public class OrangeController {
     private final static Logger logger = LoggerFactory.getLogger(OrangeController.class);
 
     /**
-     * Возвращает пару телефон-адрес для данного телефона
-     * @param clid номер телефона
-     * @param request запрос
-     * @return пара телефон-адрес
-     * @throws JsonProcessingException
+     * Возвращает список пар телефон-адрес по заданному списку телефонов
+     * @param clidList список телефонов
+     * @param request
+     * @return список пар телефон-адрес
      * @throws RestClientException
      */
-    @GetMapping
-    public ClidFullAddress getAddress(
-            @RequestParam(value = "clid")
-            @Pattern(regexp = "^([0-9]{10})*$", message = "CLID must contains only 10 numbers")
-            String clid, ServletWebRequest request)
-            throws JsonProcessingException, RestClientException {
-
-                logger.info("URI: " + request.getRequest().getRequestURI());
-                logger.info("params: " + request.getRequest().getQueryString());
-
-                ClidFullAddress clidFullAddress =  orangeService.getAddressByClid(clid);
-
-                logger.info("response: " + clidFullAddress.toString());
-                return clidFullAddress;
-    }
-
-    /**
-     * Получить список адресов по списку телефонов
-     * @param clidList список телефонов
-     * @return List<String> список адресов
-     * @throws JsonProcessingException
-     */
-    @GetMapping("/addresses")
+    @GetMapping()
     public List<ClidFullAddress> getAddresses(
             @RequestParam(value="clidList")
             @NotEmpty(message = "Input CLID list cannot be empty")
             List< @Pattern(regexp = "^([0-9]{10})*$", message = "CLID must contains only 10 numbers")
                     String> clidList, ServletWebRequest request)
-            throws JsonProcessingException, RestClientException {
+            throws RestClientException {
 
                  logger.info("URI: " + request.getRequest().getRequestURI());
                  logger.info("params: " + request.getRequest().getQueryString());
@@ -87,16 +64,16 @@ public class OrangeController {
     }
 
     /**
-     * Запрос всех адресов и телефонов
+     * Возвращает все пары телефон-адрес
      * @param pageable настройки пагинации. По умолчанию страница = 0, размер страницы = 100
-     * @return страницу с адресами и телефонами
-     * @throws JsonProcessingException
+     * @param request
+     * @return страница с парами телефон-адрес
+     * @throws RestClientException
      */
     @GetMapping("/all")
     public Page<ClidFullAddress> getAll(
             @PageableDefault(size = 100)
-            Pageable pageable, ServletWebRequest request)
-            throws JsonProcessingException, RestClientException {
+            Pageable pageable, ServletWebRequest request) throws RestClientException {
 
                 logger.info("URI: " + request.getRequest().getRequestURI());
                 logger.info("params: " + request.getRequest().getQueryString());
@@ -107,14 +84,12 @@ public class OrangeController {
                 return clidFullAddresses;
     }
 
-
     /**
      * Обработчик ошибок валидации полей
-     *
-     * @param ex исключение
-     * @return исключение в тестовом виде
+     * @param ex
+     * @param request
+     * @return подробная информация об ошибке
      */
-
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
     public Map<String, Object> handleValidationExceptions(ConstraintViolationException ex, ServletWebRequest request) {
@@ -129,6 +104,12 @@ public class OrangeController {
         return errors;
     }
 
+    /**
+     * Обработчик ошибок внешнего rest-сервиса RestClientException
+     * @param ex
+     * @param request
+     * @return подробная информация об ошибке
+     */
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(RestClientException.class)
     public Map<String, Object> handleValidationExceptions(RestClientException ex, ServletWebRequest request) {

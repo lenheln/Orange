@@ -1,5 +1,6 @@
 package elena.kozlova.orange;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -17,10 +18,8 @@ public class OrangeApplication {
 		return new RestTemplate();
 	}
 
-	//TODO один это частный случай листа
-	//TODO foreach на стримы попробуй заменить
+
+	//TODO тесты написать
 	//TODO oracle подключить вместо постгреса
 	//TODO изменить url внешнего rest
-	//TODO тесты написать
-	//TODO комментарии
 }
