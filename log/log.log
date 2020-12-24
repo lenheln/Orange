@@ -1,0 +1,199 @@
+2020-12-24 16:14:39.745  INFO 15044 --- [main] elena.kozlova.orange.OrangeApplication   : Starting OrangeApplication using Java 11.0.7 on DESKTOP-NI26ENS with PID 15044 (C:\Users\пользователь\IdeaProjects\orange\target\classes started by пользователь in C:\Users\пользователь\IdeaProjects\orange)
+2020-12-24 16:14:39.753  INFO 15044 --- [main] elena.kozlova.orange.OrangeApplication   : No active profile set, falling back to default profiles: default
+2020-12-24 16:14:43.088  INFO 15044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-24 16:14:43.613  INFO 15044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 347 ms. Found 1 JPA repository interfaces.
+2020-12-24 16:14:46.233  INFO 15044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-24 16:14:46.253  INFO 15044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-24 16:14:46.254  INFO 15044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-24 16:14:46.951  INFO 15044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-24 16:14:46.953  INFO 15044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6957 ms
+2020-12-24 16:14:47.543  INFO 15044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-24 16:14:48.061  INFO 15044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-24 16:14:48.174  INFO 15044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-24 16:14:48.330  INFO 15044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-24 16:14:48.752  INFO 15044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-24 16:14:49.122  INFO 15044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-12-24 16:14:50.892  INFO 15044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-24 16:14:50.909  INFO 15044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-24 16:14:52.371  WARN 15044 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-24 16:14:52.669  INFO 15044 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-24 16:14:53.323  INFO 15044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-24 16:14:53.348  INFO 15044 --- [main] elena.kozlova.orange.OrangeApplication   : Started OrangeApplication in 14.789 seconds (JVM running for 16.502)
+2020-12-24 16:14:59.905  INFO 15044 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-24 16:14:59.907  INFO 15044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-24 16:14:59.909  INFO 15044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2020-12-24 16:15:00.145  INFO 15044 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : path :/orange
+2020-12-24 16:15:01.050  INFO 15044 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : response: ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1)
+2020-12-24 16:15:43.852  INFO 14756 --- [main] elena.kozlova.orange.OrangeApplication   : Starting OrangeApplication using Java 11.0.7 on DESKTOP-NI26ENS with PID 14756 (C:\Users\пользователь\IdeaProjects\orange\target\classes started by пользователь in C:\Users\пользователь\IdeaProjects\orange)
+2020-12-24 16:15:43.861  INFO 14756 --- [main] elena.kozlova.orange.OrangeApplication   : No active profile set, falling back to default profiles: default
+2020-12-24 16:15:46.820  INFO 14756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-24 16:15:46.949  INFO 14756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 1 JPA repository interfaces.
+2020-12-24 16:15:48.801  INFO 14756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-24 16:15:48.824  INFO 14756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-24 16:15:48.825  INFO 14756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-24 16:15:49.084  INFO 14756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-24 16:15:49.088  INFO 14756 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4994 ms
+2020-12-24 16:15:49.392  INFO 14756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-24 16:15:49.878  INFO 14756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-24 16:15:49.969  INFO 14756 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-24 16:15:50.107  INFO 14756 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-24 16:15:50.472  INFO 14756 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-24 16:15:50.786  INFO 14756 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-12-24 16:15:52.188  INFO 14756 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-24 16:15:52.205  INFO 14756 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-24 16:15:53.459  WARN 14756 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-24 16:15:53.711  INFO 14756 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-24 16:15:54.191  INFO 14756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-24 16:15:54.211  INFO 14756 --- [main] elena.kozlova.orange.OrangeApplication   : Started OrangeApplication in 11.581 seconds (JVM running for 13.188)
+2020-12-24 16:15:56.697  INFO 14756 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-24 16:15:56.699  INFO 14756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-24 16:15:56.700  INFO 14756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2020-12-24 16:15:56.911  INFO 14756 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : path :http://localhost:8080/orange
+2020-12-24 16:15:57.403  INFO 14756 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : response: ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1)
+2020-12-24 16:17:23.351  INFO 8144 --- [main] elena.kozlova.orange.OrangeApplication   : Starting OrangeApplication using Java 11.0.7 on DESKTOP-NI26ENS with PID 8144 (C:\Users\пользователь\IdeaProjects\orange\target\classes started by пользователь in C:\Users\пользователь\IdeaProjects\orange)
+2020-12-24 16:17:23.358  INFO 8144 --- [main] elena.kozlova.orange.OrangeApplication   : No active profile set, falling back to default profiles: default
+2020-12-24 16:17:26.291  INFO 8144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-24 16:17:26.416  INFO 8144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 1 JPA repository interfaces.
+2020-12-24 16:17:28.256  INFO 8144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-24 16:17:28.275  INFO 8144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-24 16:17:28.276  INFO 8144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-24 16:17:28.583  INFO 8144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-24 16:17:28.585  INFO 8144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5098 ms
+2020-12-24 16:17:28.865  INFO 8144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-24 16:17:29.351  INFO 8144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-24 16:17:29.432  INFO 8144 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-24 16:17:29.557  INFO 8144 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-24 16:17:29.917  INFO 8144 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-24 16:17:30.352  INFO 8144 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-12-24 16:17:31.565  INFO 8144 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-24 16:17:31.579  INFO 8144 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-24 16:17:32.733  WARN 8144 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-24 16:17:32.947  INFO 8144 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-24 16:17:33.414  INFO 8144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-24 16:17:33.432  INFO 8144 --- [main] elena.kozlova.orange.OrangeApplication   : Started OrangeApplication in 11.371 seconds (JVM running for 13.065)
+2020-12-24 16:17:37.345  INFO 8144 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-24 16:17:37.346  INFO 8144 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-24 16:17:37.348  INFO 8144 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2020-12-24 16:17:37.522  INFO 8144 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : path :org.apache.catalina.connector.RequestFacade@4f8b0d3d
+2020-12-24 16:17:37.989  INFO 8144 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : response: ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1)
+2020-12-24 16:19:22.119  INFO 10048 --- [main] elena.kozlova.orange.OrangeApplication   : Starting OrangeApplication using Java 11.0.7 on DESKTOP-NI26ENS with PID 10048 (C:\Users\пользователь\IdeaProjects\orange\target\classes started by пользователь in C:\Users\пользователь\IdeaProjects\orange)
+2020-12-24 16:19:22.129  INFO 10048 --- [main] elena.kozlova.orange.OrangeApplication   : No active profile set, falling back to default profiles: default
+2020-12-24 16:19:25.383  INFO 10048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-24 16:19:25.539  INFO 10048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 1 JPA repository interfaces.
+2020-12-24 16:19:27.356  INFO 10048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-24 16:19:27.381  INFO 10048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-24 16:19:27.381  INFO 10048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-24 16:19:27.612  INFO 10048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-24 16:19:27.614  INFO 10048 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5338 ms
+2020-12-24 16:19:27.937  INFO 10048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-24 16:19:28.577  INFO 10048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-24 16:19:28.692  INFO 10048 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-24 16:19:28.836  INFO 10048 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-24 16:19:29.258  INFO 10048 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-24 16:19:29.658  INFO 10048 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-12-24 16:19:30.806  INFO 10048 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-24 16:19:30.819  INFO 10048 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-24 16:19:32.011  WARN 10048 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-24 16:19:32.230  INFO 10048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-24 16:19:32.668  INFO 10048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-24 16:19:32.686  INFO 10048 --- [main] elena.kozlova.orange.OrangeApplication   : Started OrangeApplication in 11.93 seconds (JVM running for 13.664)
+2020-12-24 16:19:38.283  INFO 10048 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-24 16:19:38.285  INFO 10048 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-24 16:19:38.287  INFO 10048 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2020-12-24 16:19:38.548  INFO 10048 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : URI :/orange
+2020-12-24 16:19:38.549  INFO 10048 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : params :clid=1111111111
+2020-12-24 16:19:39.044  INFO 10048 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : response: ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1)
+2020-12-24 16:21:02.746  INFO 16412 --- [main] elena.kozlova.orange.OrangeApplication   : Starting OrangeApplication using Java 11.0.7 on DESKTOP-NI26ENS with PID 16412 (C:\Users\пользователь\IdeaProjects\orange\target\classes started by пользователь in C:\Users\пользователь\IdeaProjects\orange)
+2020-12-24 16:21:02.752  INFO 16412 --- [main] elena.kozlova.orange.OrangeApplication   : No active profile set, falling back to default profiles: default
+2020-12-24 16:21:06.249  INFO 16412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-24 16:21:06.369  INFO 16412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 1 JPA repository interfaces.
+2020-12-24 16:21:08.209  INFO 16412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-24 16:21:08.229  INFO 16412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-24 16:21:08.230  INFO 16412 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-24 16:21:08.488  INFO 16412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-24 16:21:08.489  INFO 16412 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5530 ms
+2020-12-24 16:21:08.868  INFO 16412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-24 16:21:09.415  INFO 16412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-24 16:21:09.526  INFO 16412 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-24 16:21:09.682  INFO 16412 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-24 16:21:10.016  INFO 16412 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-24 16:21:10.531  INFO 16412 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-12-24 16:21:11.985  INFO 16412 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-24 16:21:12.000  INFO 16412 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-24 16:21:13.273  WARN 16412 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-24 16:21:13.507  INFO 16412 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-24 16:21:13.982  INFO 16412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-24 16:21:14.002  INFO 16412 --- [main] elena.kozlova.orange.OrangeApplication   : Started OrangeApplication in 12.546 seconds (JVM running for 14.056)
+2020-12-24 16:21:19.500  INFO 16412 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-24 16:21:19.501  INFO 16412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-24 16:21:19.504  INFO 16412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2020-12-24 16:21:19.695  INFO 16412 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : URI: /orange
+2020-12-24 16:21:19.696  INFO 16412 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : params: clid=2111111111
+2020-12-24 16:21:20.216  INFO 16412 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : response: ClidFullAddress(clid=2111111111, fullAddress=Улица 1 дом 1)
+2020-12-24 16:21:22.658  WARN 16412 --- [http-nio-8080-exec-2] elena.kozlova.orange.OrangeController    : {path=/orange, error=Bad Request, message=getAddress.clid: CLID must contains only 10 numbers, timestamp=Thu Dec 24 16:21:22 MSK 2020, status=400}
+2020-12-24 16:22:00.920  INFO 16412 --- [http-nio-8080-exec-4] elena.kozlova.orange.OrangeController    : URI: /orange
+2020-12-24 16:22:00.921  INFO 16412 --- [http-nio-8080-exec-4] elena.kozlova.orange.OrangeController    : params: clid=2111111111
+2020-12-24 16:22:02.946 ERROR 16412 --- [http-nio-8080-exec-4] elena.kozlova.orange.OrangeController    : {error=Internal Server Error, message=External rest servise doesn't answer, timestamp=Thu Dec 24 16:22:02 MSK 2020, status=500}
+2020-12-24 16:23:27.453  INFO 16412 --- [http-nio-8080-exec-6] elena.kozlova.orange.OrangeController    : URI: /orange/all
+2020-12-24 16:23:27.455  INFO 16412 --- [http-nio-8080-exec-6] elena.kozlova.orange.OrangeController    : params: null
+2020-12-24 16:23:28.288  INFO 16412 --- [http-nio-8080-exec-6] elena.kozlova.orange.OrangeController    : response: Page 1 of 1 containing elena.kozlova.orange.entity.ClidFullAddress instances
+2020-12-24 16:23:55.195  INFO 16412 --- [http-nio-8080-exec-9] elena.kozlova.orange.OrangeController    : URI: /orange/addresses
+2020-12-24 16:23:55.196  INFO 16412 --- [http-nio-8080-exec-9] elena.kozlova.orange.OrangeController    : params: clidList=1111111111,6111111111,8111111111
+2020-12-24 16:23:55.235  INFO 16412 --- [http-nio-8080-exec-9] elena.kozlova.orange.OrangeController    : response: [ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1), ClidFullAddress(clid=6111111111, fullAddress=null)]
+2020-12-24 16:24:26.600  INFO 19632 --- [main] elena.kozlova.orange.OrangeApplication   : Starting OrangeApplication using Java 11.0.7 on DESKTOP-NI26ENS with PID 19632 (C:\Users\пользователь\IdeaProjects\orange\target\classes started by пользователь in C:\Users\пользователь\IdeaProjects\orange)
+2020-12-24 16:24:26.613  INFO 19632 --- [main] elena.kozlova.orange.OrangeApplication   : No active profile set, falling back to default profiles: default
+2020-12-24 16:24:29.951  INFO 19632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-24 16:24:30.153  INFO 19632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 1 JPA repository interfaces.
+2020-12-24 16:24:32.036  INFO 19632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-24 16:24:32.061  INFO 19632 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-24 16:24:32.061  INFO 19632 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-24 16:24:32.331  INFO 19632 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-24 16:24:32.332  INFO 19632 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5515 ms
+2020-12-24 16:24:32.645  INFO 19632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-24 16:24:33.106  INFO 19632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-24 16:24:33.195  INFO 19632 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-24 16:24:33.319  INFO 19632 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-24 16:24:33.635  INFO 19632 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-24 16:24:33.980  INFO 19632 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-12-24 16:24:35.556  INFO 19632 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-24 16:24:35.570  INFO 19632 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-24 16:24:36.811  WARN 19632 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-24 16:24:37.095  INFO 19632 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-24 16:24:37.849  INFO 19632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-24 16:24:37.868  INFO 19632 --- [main] elena.kozlova.orange.OrangeApplication   : Started OrangeApplication in 12.459 seconds (JVM running for 13.867)
+2020-12-24 16:24:42.452  INFO 19632 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-24 16:24:42.455  INFO 19632 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-24 16:24:42.457  INFO 19632 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2020-12-24 16:24:42.624  INFO 19632 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : URI: /orange/all
+2020-12-24 16:24:42.625  INFO 19632 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : params: null
+2020-12-24 16:24:43.141  INFO 19632 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : response: [ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1), ClidFullAddress(clid=2111111111, fullAddress=Улица 1 дом 1), ClidFullAddress(clid=3111111111, fullAddress=улица 3 дом 3), ClidFullAddress(clid=4111111111, fullAddress=улица 4 дом 4), ClidFullAddress(clid=5111111111, fullAddress=улица 2 дом 2), ClidFullAddress(clid=6111111111, fullAddress=null)]
+2020-12-24 16:30:52.498  INFO 13840 --- [main] elena.kozlova.orange.OrangeApplication   : Starting OrangeApplication using Java 11.0.7 on DESKTOP-NI26ENS with PID 13840 (C:\Users\пользователь\IdeaProjects\orange\target\classes started by пользователь in C:\Users\пользователь\IdeaProjects\orange)
+2020-12-24 16:30:52.528  INFO 13840 --- [main] elena.kozlova.orange.OrangeApplication   : No active profile set, falling back to default profiles: default
+2020-12-24 16:30:55.961  INFO 13840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-24 16:30:56.099  INFO 13840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113 ms. Found 1 JPA repository interfaces.
+2020-12-24 16:30:58.011  INFO 13840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-24 16:30:58.032  INFO 13840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-24 16:30:58.033  INFO 13840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-24 16:30:58.299  INFO 13840 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-24 16:30:58.300  INFO 13840 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5601 ms
+2020-12-24 16:30:58.604  INFO 13840 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-24 16:30:59.159  INFO 13840 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-24 16:30:59.260  INFO 13840 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-24 16:30:59.407  INFO 13840 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-24 16:30:59.788  INFO 13840 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-24 16:31:00.142  INFO 13840 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-12-24 16:31:02.035  INFO 13840 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-24 16:31:02.055  INFO 13840 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-24 16:31:03.600  WARN 13840 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-24 16:31:03.841  INFO 13840 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-24 16:31:04.372  INFO 13840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-24 16:31:04.394  INFO 13840 --- [main] elena.kozlova.orange.OrangeApplication   : Started OrangeApplication in 13.319 seconds (JVM running for 14.896)
+2020-12-24 16:31:15.712  INFO 13840 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-24 16:31:15.714  INFO 13840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-24 16:31:15.716  INFO 13840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2020-12-24 16:31:15.902  INFO 13840 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : URI: /orange/addresses
+2020-12-24 16:31:15.903  INFO 13840 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : params: clidList=1111111111
+2020-12-24 16:31:16.360  INFO 13840 --- [http-nio-8080-exec-1] elena.kozlova.orange.OrangeController    : response: [ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1)]
+2020-12-24 16:31:23.491  INFO 13840 --- [http-nio-8080-exec-4] elena.kozlova.orange.OrangeController    : URI: /orange/addresses
+2020-12-24 16:31:23.492  INFO 13840 --- [http-nio-8080-exec-4] elena.kozlova.orange.OrangeController    : params: clidList=1111111111,2111111111
+2020-12-24 16:31:23.524  INFO 13840 --- [http-nio-8080-exec-4] elena.kozlova.orange.OrangeController    : response: [ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1), ClidFullAddress(clid=2111111111, fullAddress=Улица 1 дом 1)]
