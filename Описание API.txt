@@ -1,0 +1,110 @@
+REST API возвращает адрес по указанному номеру телефона 
+
+Основной URL
+Все ссылки на запросы к API в данной документации включают обязательный основной URL:
+http://localhost:8080/orange
+
+Получение адресов по списку телефонов
+GET запрос по ссылке: http://localhost:8080/orange
+
+Параметры запроса: 
+clidList - список номеров телефонов через запятую
+номер телефона должен состоять из 10 цифр
+
+Пример запроса:
+GET http://localhost:8080/orange?clidList=1111111111,2111111111
+
+Ответ:
+JSON
+Status 200
+[
+    {
+        "clid": "1111111111",
+        "fullAddress": "Улица 1 дом 1"
+    },
+    {
+        "clid": "2111111111",
+        "fullAddress": "Улица 1 дом 1"
+    }
+]
+
+В случае, если номер телефона не будет найден, в теле ответа будет пусто.
+В случае, если адрес не будет найден, вернется значение clid и "fullAddress" : null
+
+Возможные ошибки:
+400 - некорректные входные данные
+Пример ответа:
+{
+    "path": "/orange",
+    "params": "clidList=001111111",
+    "error": "Bad Request",
+    "message": "getAddresses.clidList[0].<list element>: CLID must contains only 10 numbers",
+    "timestamp": "2020-12-25T08:06:10.582+00:00",
+    "status": 400
+}
+
+500 - внутренняя ошибка сервера
+Пример ответа:
+{
+    "response": "[]",
+    "error": "Internal Server Error",
+    "message": "External rest servise doesn't answer",
+    "timestamp": "2020-12-25T08:07:45.655+00:00",
+    "status": 500
+}
+В поле response записана часть результатов, которые удалось получить до возникновения ошибки.
+
+Пакетная выгрузка
+GET запрос /orange/all
+
+Параметры:
+В качестве параметров можно указать настройки пагинации.
+По умолчанию установлены следующие настройки пагинации:
+page = 0
+size = 100
+
+Пример запроса: 
+GET http://localhost:8080/orange/all
+
+Ответ:
+Status 200
+{
+    "content": [
+        {
+            "clid": "1111111111",
+            "fullAddress": "Улица 1 дом 1"
+        },
+        {
+            "clid": "2111111111",
+            "fullAddress": "Улица 1 дом 1"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": false,
+            "unsorted": true,
+            "empty": true
+        },
+        "offset": 0,
+        "pageSize": 100,
+        "pageNumber": 0,
+        "paged": true,
+        "unpaged": false
+    },
+    "last": true,
+    "totalElements": 2,
+    "totalPages": 1,
+    "number": 0,
+    "size": 100,
+    "sort": {
+        "sorted": false,
+        "unsorted": true,
+        "empty": true
+    },
+    "first": true,
+    "numberOfElements": 2,
+    "empty": false
+}
+
+Пример запроса с кастомизированными настройками пагинации:
+GET http://localhost:8080/orange/all?page=1&size=2

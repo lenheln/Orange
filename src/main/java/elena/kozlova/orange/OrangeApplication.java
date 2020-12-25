@@ -19,7 +19,7 @@ public class OrangeApplication {
 	}
 
 
-	//TODO тесты написать
 	//TODO oracle подключить вместо постгреса
 	//TODO изменить url внешнего rest
+	//TODO Swagger
 }

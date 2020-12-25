@@ -1,4 +1,4 @@
-package elena.kozlova.orange;
+package elena.kozlova.orange.repository;
 
 import elena.kozlova.orange.entity.ClidAddrId;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,9 @@
-package elena.kozlova.orange;
+package elena.kozlova.orange.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import elena.kozlova.orange.repository.OrangeRepository;
+import elena.kozlova.orange.exceptions.RestClientExeptionWithResults;
 import elena.kozlova.orange.entity.Address;
 import elena.kozlova.orange.entity.ClidFullAddress;
 import elena.kozlova.orange.entity.ClidAddrId;
@@ -41,7 +43,7 @@ public class OrangeService {
      * @return список пар телефон-адрес
      * @throws RestClientException
      */
-    public List<ClidFullAddress> getAddressesByList(List<String> clidList) throws RestClientException {
+    public List<ClidFullAddress> getAddressesByList(List<String> clidList) throws RestClientExeptionWithResults {
         List<ClidAddrId> clidAddrIds = orangeRepository.findAllByClidList(clidList);
         return getFullAddress(clidAddrIds);
     }
@@ -52,7 +54,7 @@ public class OrangeService {
      * @return страницу с парами телефон-адрес
      * @throws RestClientException
      */
-    public Page<ClidFullAddress> getAll(Pageable pageable) throws RestClientException {
+    public Page<ClidFullAddress> getAll(Pageable pageable) throws RestClientExeptionWithResults {
         Page<ClidAddrId> clidAddrIds = orangeRepository.findAll(pageable);
         List<ClidFullAddress> clidFullAddresses = getFullAddress(clidAddrIds.toList());
         return new PageImpl<>(clidFullAddresses, pageable, clidFullAddresses.size());
@@ -64,11 +66,15 @@ public class OrangeService {
      * @return список пар телефон-адрес
      * @throws RestClientException
      */
-    public List<ClidFullAddress> getFullAddress(List<ClidAddrId> addrIds) throws RestClientException {
+    public List<ClidFullAddress> getFullAddress(List<ClidAddrId> addrIds) throws RestClientExeptionWithResults {
         List<ClidFullAddress> clidFullAddresses = new ArrayList<>();
         addrIds.forEach(ca -> {
-            String fullAddress = getAddressById(ca.getAddrId());
-            clidFullAddresses.add(new ClidFullAddress(ca.getClid(), fullAddress));
+            try {
+                String fullAddress = (ca.getAddrId() == null) ? null : getAddressById(ca.getAddrId());
+                clidFullAddresses.add(new ClidFullAddress(ca.getClid(), fullAddress));
+            } catch (RestClientException e){
+                throw new RestClientExeptionWithResults(e.getMessage(), clidFullAddresses);
+            }
         });
         return clidFullAddresses;
     }
@@ -79,7 +85,7 @@ public class OrangeService {
      * @return сторока с адресом. Если адрес не найден, возвращает null
      * @throws RestClientException
      */
-    public String getAddressById(BigDecimal addrId) throws RestClientException {
+    public String getAddressById(BigDecimal addrId) throws RestClientExeptionWithResults {
         String url = "http://localhost:9090/addr/getaddrdata/"+addrId;
         try {
             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);

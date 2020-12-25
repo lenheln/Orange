@@ -1,7 +1,8 @@
-package elena.kozlova.orange;
+package elena.kozlova.orange.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import elena.kozlova.orange.entity.ClidFullAddress;
+import elena.kozlova.orange.exceptions.RestClientExeptionWithResults;
+import elena.kozlova.orange.service.OrangeService;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +13,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.context.request.ServletWebRequest;
 
 import javax.validation.ConstraintViolationException;
@@ -43,7 +43,7 @@ public class OrangeController {
      * @param clidList список телефонов
      * @param request
      * @return список пар телефон-адрес
-     * @throws RestClientException
+     * @throws RestClientExeptionWithResults
      */
     @GetMapping()
     public List<ClidFullAddress> getAddresses(
@@ -51,7 +51,7 @@ public class OrangeController {
             @NotEmpty(message = "Input CLID list cannot be empty")
             List< @Pattern(regexp = "^([0-9]{10})*$", message = "CLID must contains only 10 numbers")
                     String> clidList, ServletWebRequest request)
-            throws RestClientException {
+            throws RestClientExeptionWithResults {
 
                  logger.info("URI: " + request.getRequest().getRequestURI());
                  logger.info("params: " + request.getRequest().getQueryString());
@@ -68,12 +68,12 @@ public class OrangeController {
      * @param pageable настройки пагинации. По умолчанию страница = 0, размер страницы = 100
      * @param request
      * @return страница с парами телефон-адрес
-     * @throws RestClientException
+     * @throws RestClientExeptionWithResults
      */
     @GetMapping("/all")
     public Page<ClidFullAddress> getAll(
             @PageableDefault(size = 100)
-            Pageable pageable, ServletWebRequest request) throws RestClientException {
+            Pageable pageable, ServletWebRequest request) throws RestClientExeptionWithResults {
 
                 logger.info("URI: " + request.getRequest().getRequestURI());
                 logger.info("params: " + request.getRequest().getQueryString());
@@ -111,13 +111,14 @@ public class OrangeController {
      * @return подробная информация об ошибке
      */
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler(RestClientException.class)
-    public Map<String, Object> handleValidationExceptions(RestClientException ex, ServletWebRequest request) {
+    @ExceptionHandler(RestClientExeptionWithResults.class)
+    public Map<String, Object> handleValidationExceptions(RestClientExeptionWithResults ex, ServletWebRequest request) {
         Map<String, Object> errors = new HashMap<>();
         errors.put("timestamp", new Date());
         errors.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
         errors.put("error", HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
         errors.put("message", "External rest servise doesn't answer");
+        errors.put("response", ex.getClidFullAddressList().toString());
         logger.error(errors.toString());
         return errors;
     }
