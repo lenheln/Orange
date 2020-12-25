@@ -20,11 +20,11 @@ Status 200
 [
     {
         "clid": "1111111111",
-        "fullAddress": "Улица 1 дом 1"
+        "fullAddress": "Россия, Москва, 1-й Красногвардейский проезд, д. 15"
     },
     {
         "clid": "2111111111",
-        "fullAddress": "Улица 2 дом 2"
+        "fullAddress": "Россия, Москва, ул. Тверская, д. 2"
     }
 ]
 
@@ -49,11 +49,11 @@ Status 200
     "content": [
         {
             "clid": "1111111111",
-            "fullAddress": "Улица 1 дом 1"
+            "fullAddress": "Россия, Москва, 1-й Красногвардейский проезд, д. 15"
         },
         {
             "clid": "2111111111",
-            "fullAddress": "Улица 1 дом 1"
+            "fullAddress": "Россия, Москва, ул. Тверская, д. 2"
         }
     ],
     "pageable": {
@@ -101,7 +101,7 @@ GET http://localhost:8080/orange/all?page=1&size=2
 500 - внутренняя ошибка сервера
 Пример ответа:
 {
-    "response": "[ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1), ClidFullAddress(clid=2111111111, fullAddress=Улица 2 дом 2)]",
+    "response": "[ClidFullAddress(clid=1111111111, fullAddress=Россия, Москва, 1-й Красногвардейский проезд, д. 15), ClidFullAddress(clid=2111111111, fullAddress=Россия, Москва, ул. Тверская, д. 2)]",
     "error": "Internal Server Error",
     "message": "External rest servise doesn't answer",
     "timestamp": "2020-12-25T08:07:45.655+00:00",
