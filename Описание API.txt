@@ -24,7 +24,7 @@ Status 200
     },
     {
         "clid": "2111111111",
-        "fullAddress": "Улица 1 дом 1"
+        "fullAddress": "Улица 2 дом 2"
     }
 ]
 
