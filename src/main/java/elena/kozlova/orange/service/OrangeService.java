@@ -86,7 +86,7 @@ public class OrangeService {
      * @throws RestClientException
      */
     public String getAddressById(BigDecimal addrId) throws RestClientExeptionWithResults {
-        String url = "http://localhost:9090/addr/getaddrdata/"+addrId;
+        String url = "http://{some.url}/addr/getaddrdata/"+addrId;
         try {
             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
             ObjectMapper objectMapper = new ObjectMapper();

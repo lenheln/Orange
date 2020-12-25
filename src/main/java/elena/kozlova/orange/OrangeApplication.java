@@ -17,9 +17,4 @@ public class OrangeApplication {
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
-
-
-	//TODO oracle подключить вместо постгреса
-	//TODO изменить url внешнего rest
-	//TODO Swagger
 }

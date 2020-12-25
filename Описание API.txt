@@ -31,29 +31,6 @@ Status 200
 В случае, если номер телефона не будет найден, в теле ответа будет пусто.
 В случае, если адрес не будет найден, вернется значение clid и "fullAddress" : null
 
-Возможные ошибки:
-400 - некорректные входные данные
-Пример ответа:
-{
-    "path": "/orange",
-    "params": "clidList=001111111",
-    "error": "Bad Request",
-    "message": "getAddresses.clidList[0].<list element>: CLID must contains only 10 numbers",
-    "timestamp": "2020-12-25T08:06:10.582+00:00",
-    "status": 400
-}
-
-500 - внутренняя ошибка сервера
-Пример ответа:
-{
-    "response": "[]",
-    "error": "Internal Server Error",
-    "message": "External rest servise doesn't answer",
-    "timestamp": "2020-12-25T08:07:45.655+00:00",
-    "status": 500
-}
-В поле response записана часть результатов, которые удалось получить до возникновения ошибки.
-
 Пакетная выгрузка
 GET запрос /orange/all
 
@@ -108,3 +85,26 @@ Status 200
 
 Пример запроса с кастомизированными настройками пагинации:
 GET http://localhost:8080/orange/all?page=1&size=2
+
+Возможные ошибки:
+400 - некорректные входные данные
+Пример ответа:
+{
+    "path": "/orange",
+    "params": "clidList=123456789",
+    "error": "Bad Request",
+    "message": "getAddresses.clidList[0].<list element>: CLID must contains only 10 numbers",
+    "timestamp": "2020-12-25T08:06:10.582+00:00",
+    "status": 400
+}
+
+500 - внутренняя ошибка сервера
+Пример ответа:
+{
+    "response": "[ClidFullAddress(clid=1111111111, fullAddress=Улица 1 дом 1), ClidFullAddress(clid=2111111111, fullAddress=Улица 2 дом 2)]",
+    "error": "Internal Server Error",
+    "message": "External rest servise doesn't answer",
+    "timestamp": "2020-12-25T08:07:45.655+00:00",
+    "status": 500
+}
+В поле response записана часть результатов, которые удалось получить до возникновения ошибки.
